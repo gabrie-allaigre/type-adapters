@@ -1,10 +1,12 @@
 package com.synaptix.typeadapters;
 
 import com.google.common.reflect.TypeToken;
-import com.synaptix.typeadapters.ITypeAdapter;
-import com.synaptix.typeadapters.ITypeAdapterFactory;
 
-public class TypeAdapters {
+public class TypeAdaptersHelper {
+
+    private TypeAdaptersHelper() {
+        super();
+    }
 
     public static <E, Src, Dst> ITypeAdapterFactory<E> newTypeFactory(Class<Src> srcClass, Class<Dst> dstClass, ITypeAdapter<Src, Dst> typeAdapter) {
         return newTypeFactory(TypeToken.of(srcClass), TypeToken.of(dstClass), typeAdapter);

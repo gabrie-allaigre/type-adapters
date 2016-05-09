@@ -9,14 +9,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TADelegate<E> {
+public class TypeAdaptersDelegate<E> {
 
     private final E parent;
     private final ThreadLocal<Map<Pair<TypeToken<?>, TypeToken<?>>, FutureTypeAdapter<?, ?>>> calls = new ThreadLocal<>();
     private final Map<Pair<TypeToken<?>, TypeToken<?>>, ITypeAdapter<?, ?>> typeTokenCache = Collections.synchronizedMap(new HashMap<>());
     private final List<ITypeAdapterFactory<E>> factories;
 
-    public TADelegate(E parent, List<? extends ITypeAdapterFactory<E>> factories) {
+    public TypeAdaptersDelegate(E parent, List<? extends ITypeAdapterFactory<E>> factories) {
         super();
 
         this.parent = parent;
@@ -72,7 +72,7 @@ public class TADelegate<E> {
                     return candidate;
                 }
             }
-            throw new IllegalArgumentException("TADelegate cannot handle for [" + srcTypeToken + " -> " + dstTypeToken + "]");
+            throw new IllegalArgumentException("TypeAdaptersDelegate cannot handle for [" + srcTypeToken + " -> " + dstTypeToken + "]");
         } finally {
             threadCalls.remove(pair);
 
