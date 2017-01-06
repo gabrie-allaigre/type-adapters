@@ -5,6 +5,8 @@
     <artifactId>type-adapters</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>Type Adapters</name>
+    <description>Help to create factory convertion type to type</description>
+    <url>http://www.talanlabs.com</url>
     <properties>
         <target.jdk>1.8</target.jdk>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
